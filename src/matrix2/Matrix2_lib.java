@@ -90,7 +90,18 @@ p++;
 	    	return answer;
 	    	}
 
-
+        public double [] getSolution(double[][] a,double[] b) {
+        	double answer [] = new double[a.length];
+        	a = this.getInverse(a);
+        	for(int i = 0;i < a.length; i++) {
+        		double tmp = 0;
+        		for(int j = 0;j < a.length; j++) {
+        		tmp += a[i][j] * b[j];
+        	}
+        	answer[i] = tmp;
+        }
+        return answer;
 
 		
+    }
 }
